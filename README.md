@@ -1,2 +1,3 @@
-# blog-201
+# jam
+
 Programming Pragmatics at University of Michigan 2022
