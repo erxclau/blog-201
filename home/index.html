@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-</head>
-<body>
-  home
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      @import url("../static/css/main.css");
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <header>
+          <h1>My name is Eric Lau.</h1>
+          <p>I am a<span id="dek"></span></p>
+        </header>
+      </article>
+    </main>
+    <script>
+      window.onload = async () => {
+        const $ = (s) => document.querySelector(s);
+        const dek = $("#dek");
+        const list = [
+          "n engineering fellow at The Texas Tribune.",
+          " co-managing online editor at The Michigan Daily.",
+          " computer science student at the University of Michigan.",
+        ];
+
+        const ms = 10000;
+        let i = 0;
+
+        const delay = (ms) =>
+          new Promise((res) => {
+            setTimeout(res, ms);
+          });
+
+        await delay(750);
+
+        const write = async () => {
+          const length = list[i].length;
+          const duration = length * 100 + 500 + length * 85 + 200;
+          setTimeout(write, duration);
+
+          for await (const c of list[i]) {
+            dek.textContent += c;
+            await delay(100);
+          }
+
+          await delay(500);
+
+          for await (const c of list[i]) {
+            dek.textContent = dek.textContent.slice(0, -1);
+            await delay(85);
+          }
+
+          i++;
+          if (i === list.length) {
+            i = 0;
+          }
+        };
+
+        write();
+      };
+    </script>
+  </body>
 </html>
