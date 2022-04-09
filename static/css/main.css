@@ -33,10 +33,15 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 100vh;
 }
 
 header h1 {
   margin: 0;
+}
+
+footer {
+  margin: 1rem 0;
 }
 
 a,
@@ -55,10 +60,11 @@ figure {
 
 figure img,
 figure video {
-  outline: 4px solid black;
-  outline-offset: -2px;
+  outline: 3px solid black;
+  outline-offset: -1.5px;
   aspect-ratio: 1440/710;
   object-fit: cover;
+  object-position: center;
 }
 
 figure figcaption {
@@ -75,10 +81,6 @@ figure figcaption a:visited {
 figure figcaption a:hover {
   text-decoration: none;
   color: rgb(63, 63, 63);
-}
-
-.vh-100 {
-  min-height: 100vh;
 }
 
 #wave {
@@ -115,7 +117,7 @@ figure figcaption a:hover {
   gap: 2rem 1.5rem;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
   #code-grid {
     grid-template-columns: 1fr;
   }
