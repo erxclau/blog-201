@@ -13,55 +13,11 @@
     <main>
       <article>
         <header>
-          <h1>My name is Eric Lau.</h1>
-          <p>I am a<span id="dek"></span></p>
+          <h1><span id="wave">👋🏼</span> My name is Eric Lau.</h1>
+          <p id="dek">I</p>
         </header>
       </article>
     </main>
-    <script>
-      window.onload = async () => {
-        const $ = (s) => document.querySelector(s);
-        const dek = $("#dek");
-        const list = [
-          "n engineering fellow at The Texas Tribune.",
-          " co-managing online editor at The Michigan Daily.",
-          " computer science student at the University of Michigan.",
-        ];
-
-        const delay = (ms) =>
-          new Promise((res) => {
-            setTimeout(res, ms);
-          });
-
-        async function* generateList() {
-          let i = 0;
-          while (true) {
-            const len = list[i].length;
-            yield list[i];
-            await delay(750);
-            i++;
-            if (i === list.length) {
-              i = 0;
-            }
-          }
-        }
-
-        for await (const c of generateList()) {
-          const len = c.length;
-
-          for await (const l of c) {
-            dek.textContent += l;
-            await delay(100);
-          }
-
-          await delay(500);
-
-          for await (const l of c) {
-            dek.textContent = dek.textContent.slice(0, -1);
-            await delay(85);
-          }
-        }
-      };
-    </script>
+    <script src="../static/js/main.js"></script>
   </body>
 </html>
