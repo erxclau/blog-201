@@ -14,16 +14,214 @@
     <style>
       @import url("../static/css/main.css");
     </style>
-    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" href="../favicon.ico" />
   </head>
   <body>
-    <main>
-      <article>
-        <header>
-          <h1><span id="wave">👋🏼</span> My name is Eric Lau.</h1>
-          <p id="dek">I</p>
-        </header>
-      </article>
+    <main role="main">
+      <header class="vh-100">
+        <h1><span id="wave">👋🏼</span> My name is Eric Lau.</h1>
+        <p id="dek">I</p>
+      </header>
+      <section id="work">
+        <h2>Words 📝</h2>
+        <p>
+          I write words sometimes. You can read a few of them in my
+          <a href="/blog">blog</a>.
+        </p>
+        <h2>Code 💻</h2>
+        <p>
+          I write code too. My main interests are web development and data
+          visualization. I mostly write in JavaScript and Python, though I'm
+          also comfortable with C/C++.
+        </p>
+      </section>
+      <section id="code-grid">
+        <figure>
+          <a
+            href="https://www.michigandaily.com/news/more-than-100-ann-arbor-restaurants-closed-in-the-past-three-years-how-have-these-closures-affected-the-community/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="More than 100 Ann Arbor restaurants closed in the past three years. How have these closures affected the community?"
+          >
+            <picture>
+              <source srcset="../static/img/webp/map.webp" type="image/webp" />
+              <img
+                src="../static/img/jpg/map.jpg"
+                alt="Map showing whether Ann Arbor restaurants are closed or open"
+                loading="lazy"
+                width="100%"
+                height="auto"
+              />
+            </picture>
+          </a>
+          <figcaption>
+            <a
+              href="https://www.michigandaily.com/news/more-than-100-ann-arbor-restaurants-closed-in-the-past-three-years-how-have-these-closures-affected-the-community/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              More than 100 Ann Arbor restaurants closed in the past three
+              years. How have these closures affected the community?
+            </a>
+            <p>
+              A map showing the status of Ann Arbor restaurants. Built QGIS and
+              Adobe Illustrator.
+            </p>
+          </figcaption>
+        </figure>
+        <figure>
+          <a
+            href="https://www.michigandaily.com/campus-life/umich-class-of-2025-by-the-numbers-and-their-hopes-for-college/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="UMich Class of 2025: By the numbers and their hopes for college"
+          >
+            <video autoplay muted loop playsinline width="100%" height="auto">
+              <source
+                src="../static/video/mp4/class-of-2025.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </a>
+          <figcaption>
+            <a
+              href="https://www.michigandaily.com/campus-life/umich-class-of-2025-by-the-numbers-and-their-hopes-for-college/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              UMich Class of 2025: By the numbers and their hopes for college
+            </a>
+            <p>
+              Data visuals conveying results from The Daily's Class of 2025
+              survey. Built with D3 and Scrollama.
+            </p>
+          </figcaption>
+        </figure>
+        <figure>
+          <a
+            href="https://mic.michigandaily.com/queer-in-color"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Queer in Color"
+          >
+            <picture>
+              <source srcset="../static/img/webp/qic.webp" type="image/webp" />
+              <img
+                src="../static/img/jpg/qic.jpg"
+                alt="Landing screen of the Queer in Color website"
+                loading="lazy"
+                width="100%"
+                height="auto"
+              />
+            </picture>
+          </a>
+          <figcaption>
+            <a
+              href="https://mic.michigandaily.com/queer-in-color"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Queer in Color
+            </a>
+            <p>
+              A website to showcase work by queer authors and artists in
+              Michigan in Color. Built using React and ArchieML.
+            </p>
+          </figcaption>
+        </figure>
+        <figure>
+          <a
+            href="https://www.michigandaily.com/statement/love-notes-2022/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Love Notes 2022 Edition"
+          >
+            <picture>
+              <source srcset="../static/img/webp/love.webp" type="image/webp" />
+              <img
+                src="../static/img/jpg/love.jpg"
+                alt="Landing screen of the 2022 Love Notes website"
+                loading="lazy"
+                width="100%"
+                height="auto"
+              />
+            </picture>
+          </a>
+          <figcaption>
+            <a
+              href="https://www.michigandaily.com/statement/love-notes-2022/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Love Notes
+            </a>
+            <p>
+              A website to display love notes that people sent to each other as
+              cassette tapes. Built using Svelte.
+            </p>
+          </figcaption>
+        </figure>
+        <figure>
+          <a
+            href="https://miseducation.michigandaily.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="The Miseducation Project"
+          >
+            <picture>
+              <source
+                srcset="../static/img/webp/miseducation.webp"
+                type="image/webp"
+              />
+              <img
+                src="../static/img/jpg/miseducation.jpg"
+                alt="Landing screen of The Miseducation Project website"
+                loading="lazy"
+                width="100%"
+                height="auto"
+              />
+            </picture>
+          </a>
+          <figcaption>
+            <a
+              href="https://miseducation.michigandaily.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              The Miseducation Project
+            </a>
+            <p>
+              A website to showcase student art and storytelling. Built using
+              React and ArchieML.
+            </p>
+          </figcaption>
+        </figure>
+        <figure>
+          <a
+            href="https://github.com/erxclau/computer-graphics"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Graphics engine"
+          >
+            <video autoplay muted loop playsinline width="100%" height="auto">
+              <source src="../static/video/mp4/brain.mp4" type="video/mp4" />
+            </video>
+          </a>
+          <figcaption>
+            <a
+              href="https://github.com/erxclau/computer-graphics"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Graphics engine
+            </a>
+            <p>
+              An MDL graphics engine with lighting and coordinate systems
+              capable of rendering animations. Built using C and Python.
+            </p>
+          </figcaption>
+        </figure>
+      </section>
     </main>
     <script src="../static/js/main.js"></script>
   </body>
