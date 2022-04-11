@@ -22,6 +22,18 @@ main > header {
   width: 100%;
 }
 
+main > header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+#hero picture img {
+  max-width: 300px;
+}
+
 main > section {
   padding: 1rem;
   box-sizing: border-box;
@@ -120,5 +132,19 @@ figure figcaption a:hover {
 @media screen and (max-width: 800px) {
   #code-grid {
     grid-template-columns: 1fr;
+  }
+
+  main > header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  #hero {
+    order: 0;
+  }
+
+  #head {
+    order: 1;
   }
 }

@@ -24,7 +24,7 @@ window.onload = async () => {
     }
   }
 
-  await delay(2500);
+  await delay(2000);
   dek.style.visibility = "visible";
 
   for await (const l of " am a") {
