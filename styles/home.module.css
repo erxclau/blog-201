@@ -28,35 +28,6 @@
   box-sizing: border-box;
 }
 
-.figure {
-  margin: 0;
-}
-
-.figure img,
-.figure video {
-  outline: 3px solid black;
-  outline-offset: -1.5px;
-  aspect-ratio: 1440/710;
-  object-fit: cover;
-  object-position: center;
-}
-
-.figure figcaption {
-  margin-top: 0.25rem;
-}
-
-.figure figcaption a,
-.figure figcaption a:visited {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: black;
-}
-
-.figure figcaption a:hover {
-  text-decoration: none;
-  color: rgb(63, 63, 63);
-}
-
 .wave {
   display: inline-block;
   animation-duration: 0.5s;
