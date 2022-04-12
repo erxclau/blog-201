@@ -1,9 +1,14 @@
-import Head from "next/head";
-import Layout from "../components/layout";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
+import Head from "next/head";
+import Link from "next/link";
+
+import Layout from "../components/layout";
 import styles from "../styles/blog.module.css";
 
-const Blog = () => (
+const Blog = ({ posts }) => (
   <Layout>
     <Head>
       <meta property="og:title" content="Eric Lau" />
@@ -17,32 +22,34 @@ const Blog = () => (
     <header className={styles.header}>
       <h1>Eric&apos;s blog</h1>
     </header>
-    <article className={styles.article}>
-      <a href="/blog/posts/on-newsroom-engineering.html">On newsroom engineering</a>
-      <time dateTime="2022-04-10">April 10</time>
-      <summary>
-        My thoughts on what makes a good engineering team in a newsroom after
-        my experiences at The Michigan Daily and The Texas Tribune.
-      </summary>
-    </article>
-    <article className={styles.article}>
-      <a href="/blog/posts/on-web-development.html">On web development</a>
-      <time dateTime="2022-04-10">April 10</time>
-      <summary>
-        What I think is crucial for learning web development from scratch
-      </summary>
-    </article>
-    <article className={styles.article}>
-      <a href="/blog/posts/on-data-visualization.html">On data visualization</a>
-      <time dateTime="2022-04-10">April 10</time>
-      <summary>Exploring how I go about doing data visualization</summary>
-    </article>
-    <article className={styles.article}>
-      <a href="/blog/posts/reflections-on-winter-2022.html">Reflections on Winter 2022</a>
-      <time dateTime="2022-04-10">April 10</time>
-      <summary>Thinking back on the Winter 2022 semester</summary>
-    </article>
+    {
+      posts.map((post) => (
+        <article className={styles.article} key={post.slug}>
+          <Link href={`/posts/${post.slug}`}>
+            <a>{post.title}</a>
+          </Link>
+          <time dateTime={post.date}>{post.date}</time>
+          <summary>
+            {post.dek}
+          </summary>
+        </article>
+      ))
+    }
   </Layout>
 );
 
+const getStaticProps = () => {
+  const dir = path.resolve("./", "posts");
+  const filenames = fs.readdirSync(dir);
+
+  const posts = filenames.map((name) => {
+    const f = path.join("./", "posts", name);
+    const p = fs.readFileSync(f, 'utf-8');
+    return matter(p).data;
+  });
+
+  return { props: { posts: posts } };
+};
+
+export { getStaticProps };
 export default Blog;

@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import AppHead from "../components/head";
 
 const Index = () => (
