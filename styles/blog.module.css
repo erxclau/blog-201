@@ -1,16 +1,16 @@
-main > article,
-main > header {
+.article, .header {
+  width: 100%;
   max-width: 600px;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-article a {
+.article a {
   display: block;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
-article time {
+.article time {
   font-weight: 600;
 }
-
-
