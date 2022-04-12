@@ -19,8 +19,8 @@
 }
 
 .heroimg {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .section {
@@ -85,7 +85,7 @@
   }
 }
 
-@media screen and (max-width: 310px) {
+@media screen and (max-width: 410px) {
   .heroimg {
     width: 100%;
     height: auto;

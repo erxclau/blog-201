@@ -1,8 +1,8 @@
 module.exports = {
   ci: {
     collect: {
-      staticDistDir: './',
-      url: ['http://localhost/home/index.html', 'http://localhost/blog/index.html']
+      url: ['http://localhost:3000/home', 'http://localhost:3000/blog'],
+      startServerCommand: 'yarn start'
     },
     upload: {
       target: 'temporary-public-storage',
@@ -11,7 +11,10 @@ module.exports = {
       preset: 'lighthouse:no-pwa',
       assertions: {
         'csp-xss': 'off',
-        'uses-responsive-images': 'warn'
+        'legacy-javascript': 'warn',
+        'unsized-images': 'warn',
+        'total-byte-weight': 'warn',
+        'image-size-responsive': 'warn'
       }
     }
   },
