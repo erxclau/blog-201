@@ -16,30 +16,10 @@ main {
   align-items: center;
 }
 
-main > article,
 main > header {
-  max-width: 600px;
   width: 100%;
   padding: 1rem;
   box-sizing: border-box;
-}
-
-article a {
-  display: block;
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-article time {
-  font-weight: 600;
-}
-
-header h1 {
-  margin: 0;
-}
-
-footer {
-  margin: 1rem 0;
 }
 
 a,
@@ -50,4 +30,12 @@ a:visited {
 a:hover {
   text-decoration: none;
   color: #767676;
+}
+
+footer {
+  margin: 1rem 0;
+}
+
+header h1 {
+  margin: 0;
 }

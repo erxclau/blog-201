@@ -1,4 +1,4 @@
-window.onload = async () => {
+const type = async () => {
   const $ = (s) => document.querySelector(s);
   const dek = $("#dek");
   const list = [
@@ -50,3 +50,5 @@ window.onload = async () => {
     }
   }
 };
+
+type();

@@ -1,8 +1,7 @@
 **/.DS_Store
 node_modules
-.env
 
 .lighthouseci
-
-package.json
-yarn.lock
+.next
+.env
+out
