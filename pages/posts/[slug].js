@@ -1,6 +1,6 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import { readdirSync } from "fs";
+import { resolve, join } from "path";
+import { read } from "gray-matter";
 import { Converter } from "showdown";
 
 import Head from "next/head";
@@ -12,10 +12,10 @@ const Post = ({ data, content }) => (
   <Layout>
     <Head>
       <meta property="og:title" content={`${data.title} | Eric Lau`} />
-      <meta 
-        name="description" 
-        property="og:description" 
-        content={data.dek} 
+      <meta
+        name="description"
+        property="og:description"
+        content={data.dek}
       />
       <title>{data.title}</title>
     </Head>
@@ -28,13 +28,13 @@ const Post = ({ data, content }) => (
 )
 
 const getStaticPaths = async () => {
-  const dir = path.resolve("./", "posts");
-  const filenames = fs.readdirSync(dir);
+  const dir = resolve("./", "posts");
+  const filenames = readdirSync(dir);
 
   const paths = filenames.map((name) => {
-    const f = path.join("./", "posts", name);
+    const f = join("./", "posts", name);
     return {
-      params: { slug: matter.read(f).data.slug }
+      params: { slug: read(f).data.slug }
     };
   });
 
@@ -42,8 +42,8 @@ const getStaticPaths = async () => {
 }
 
 const getStaticProps = ({ params }) => {
-  const f = path.join("./", "posts", `${params.slug}.md`);
-  const m = matter.read(f);
+  const f = join("./", "posts", `${params.slug}.md`);
+  const m = read(f);
 
   const converter = new Converter();
   const html = converter.makeHtml(m.content);

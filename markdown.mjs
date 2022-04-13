@@ -1,15 +1,17 @@
 #!/bin/node
 
-const filenames = process.argv.slice(2);
+import { exit, argv } from "process";
+
+const filenames = argv.slice(2);
 
 if (filenames.length === 0) {
-  process.exit(0);
+  exit(0);
 }
 
 const postnames = filenames.filter((name) => name.startsWith("posts/"));
 
 if (postnames.length === 0) {
-  process.exit(0);
+  exit(0);
 }
 
 console.log("Validating markdown files in posts/");
@@ -17,7 +19,6 @@ console.log("Validating markdown files in posts/");
 import matter from "gray-matter";
 import { basename } from "path";
 import { existsSync } from "fs";
-import { exit } from "process";
 
 const hasKey = (obj, key) => obj.hasOwnProperty(key) && obj[key];
 
@@ -72,5 +73,4 @@ postnames.forEach((name) => {
   }
 });
 
-process.exit(failure ? 1 : 0);
-
+exit(failure ? 1 : 0);

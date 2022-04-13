@@ -1,6 +1,6 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import { readdirSync } from "fs";
+import { join, resolve } from "path";
+import { read } from "gray-matter";
 
 import Head from "next/head";
 import Link from "next/link";
@@ -39,12 +39,12 @@ const Blog = ({ posts }) => (
 );
 
 const getStaticProps = () => {
-  const dir = path.resolve("./", "posts");
-  const filenames = fs.readdirSync(dir);
+  const dir = resolve("./", "posts");
+  const filenames = readdirSync(dir);
 
   const posts = filenames.map((name) => {
-    const f = path.join("./", "posts", name);
-    return matter.read(f).data;
+    const f = join("./", "posts", name);
+    return read(f).data;
   });
 
   return { props: { posts: posts } };
