@@ -16,12 +16,18 @@ console.log("Validating markdown files in posts/");
 
 import matter from "gray-matter";
 import { basename } from "path";
+import { existsSync } from "fs";
+import { exit } from "process";
 
 const hasKey = (obj, key) => obj.hasOwnProperty(key) && obj[key];
 
 let failure = false;
 
 postnames.forEach((name) => {
+  if (!existsSync(name)) {
+    return;
+  }
+
   const bname = basename(name);
   console.log("-", name);
   if (!name.endsWith(".md")) {
