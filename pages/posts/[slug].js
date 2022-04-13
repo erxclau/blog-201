@@ -33,9 +33,8 @@ const getStaticPaths = async () => {
 
   const paths = filenames.map((name) => {
     const f = path.join("./", "posts", name);
-    const p = fs.readFileSync(f, 'utf-8');
     return {
-      params: { slug: matter(p).data.slug }
+      params: { slug: matter.read(f).data.slug }
     };
   });
 
@@ -44,8 +43,7 @@ const getStaticPaths = async () => {
 
 const getStaticProps = ({ params }) => {
   const f = path.join("./", "posts", `${params.slug}.md`);
-  const p = fs.readFileSync(f, 'utf-8');
-  const m = matter(p);
+  const m = matter.read(f);
 
   const converter = new Converter();
   const html = converter.makeHtml(m.content);

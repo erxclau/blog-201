@@ -29,7 +29,7 @@ const work = [
   {
     "href": "https://www.michigandaily.com/campus-life/umich-class-of-2025-by-the-numbers-and-their-hopes-for-college/",
     "title": "UMich Class of 2025: By the numbers and their hopes for college",
-    "dek": "Data visuals conveying results from The Daily&apos;s Class of 2025 survey. Built with D3 and Scrollama.",
+    "dek": "Data visuals conveying results from The Michigan Daily Class of 2025 survey. Built with D3 and Scrollama.",
     "media": {
       "type": "video",
       "src": "class-of-2025"

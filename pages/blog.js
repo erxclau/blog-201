@@ -44,8 +44,7 @@ const getStaticProps = () => {
 
   const posts = filenames.map((name) => {
     const f = path.join("./", "posts", name);
-    const p = fs.readFileSync(f, 'utf-8');
-    return matter(p).data;
+    return matter.read(f).data;
   });
 
   return { props: { posts: posts } };
