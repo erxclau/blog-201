@@ -1,4 +1,4 @@
-from subprocess import run, Popen, DEVNULL, PIPE
+from subprocess import Popen, PIPE
 from socket import socket, AF_INET, SOCK_STREAM
 from time import sleep
 
