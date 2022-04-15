@@ -1,5 +1,5 @@
 import { readdirSync } from "fs";
-import { join, resolve } from "path";
+import { basename, join, resolve } from "path";
 import { read } from "gray-matter";
 
 import Head from "next/head";
@@ -23,14 +23,14 @@ const Blog = ({ posts }) => (
       <h1>Eric&apos;s blog</h1>
     </header>
     {
-      posts.map((post) => (
-        <article className={styles.article} key={post.slug}>
-          <Link href={`/posts/${post.slug}`}>
-            <a>{post.title}</a>
+      posts.map(({ data, path }) => (
+        <article className={styles.article} key={data.slug}>
+          <Link href={`/posts/${basename(path, ".md")}`}>
+            <a>{data.title}</a>
           </Link>
-          <time dateTime={post.date}>{post.date}</time>
+          <time dateTime={data.date}>{data.date}</time>
           <summary>
-            {post.dek}
+            {data.dek}
           </summary>
         </article>
       ))
@@ -44,7 +44,8 @@ const getStaticProps = () => {
 
   const posts = filenames.map((name) => {
     const f = join("./", "posts", name);
-    return read(f).data;
+    const p = read(f);
+    return { data: p.data, path: p.path };
   });
 
   return { props: { posts: posts } };

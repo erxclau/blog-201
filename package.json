@@ -7,7 +7,8 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "markdown": "node markdown.mjs $(echo $(git diff --name-only --cached))"
+    "markdown": "node markdown.mjs $(echo $(git diff --name-only --cached))",
+    "selenium": "python test.py"
   },
   "dependencies": {
     "next": "^12.1.4",

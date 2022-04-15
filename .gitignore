@@ -5,3 +5,7 @@ node_modules
 .next
 .env
 out
+
+venv
+chromedriver
+__pycache__
